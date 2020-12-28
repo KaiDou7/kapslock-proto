@@ -1,0 +1,52 @@
+@import "../../../../variables";
+
+.blog{
+    &-heading{
+        text-align: center;
+        font-size: $hero-heading;
+    }
+    &-tagline{
+        text-align: center;
+        font-size: $subheading;
+        font-weight: 600;
+        color: $primary-color;
+        margin: 1em 0;
+    }
+    &-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &-card{
+        max-width: 500px;
+        margin: 0 1em;
+        padding-bottom: 2em;
+        margin-bottom: 1em;
+        border: 1px solid rgba($color: $black-color, $alpha: 0.5);
+
+        img{
+            width: 100%;
+        }
+        &-date{
+            font-size: $para;
+            color: rgba($color: $black-color, $alpha: 0.5);
+            margin: 1em 0;
+            padding: 0 1em;
+        }
+        &-title{
+            font-size: $link-button;
+            margin-bottom: 2em;
+            padding: 0 1em;
+        }
+        &-cta{
+            color: $primary-color;
+            padding: 0 1em;
+            font-size: $link-button;
+            transition: color 500ms;
+            &:hover{
+                color: $black-color;
+            }
+        }
+    }
+}

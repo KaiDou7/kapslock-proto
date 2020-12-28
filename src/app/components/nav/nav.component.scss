@@ -1,0 +1,109 @@
+@import "../../../variables";
+nav{
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba($color: white, $alpha: 0.9);
+
+    .logo{
+        animation: logo-animation 600ms ease-out;
+    }
+
+    .nav-list{
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-list-mobile{
+        display: none;
+        list-style: none;
+    }
+    
+    .nav-item{
+        text-decoration: none;
+        color: $black-color;
+        padding: .5em 1em;
+        font-size: $link-button;
+        font-weight: normal;
+        transition: color 500ms;
+        &:hover{
+            color: $primary-color;
+        }
+    }
+
+    .menu{
+        display: none;
+        cursor: pointer;
+    }
+
+    .close{
+        display: none;
+        cursor: pointer;
+    }
+}
+
+@keyframes logo-animation {
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 980px){
+    nav{
+        .nav-list{
+            display: none;
+        }
+        .nav-list-mobile{
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            flex-direction: column;
+            min-width: 300px;
+            width: 60%;
+            background-color: white;
+            margin: 0;
+            .nav-item{
+                display: inline-block;
+                padding-bottom: 4em;
+                padding-left: 1em;
+            }
+            .nav-cta{
+                margin-left: 1em;
+            }
+            .close{
+                display: block;
+                margin-left: auto;
+                margin-right: 1.5rem;
+                margin-bottom: 4em;
+                margin-top: 2em;
+                img{
+                    display: block;
+                    margin-left: auto;
+                }
+            }
+        }
+        
+        .menu{
+            display: block;
+        }
+    }
+    .mobile-menu-background-black{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+}

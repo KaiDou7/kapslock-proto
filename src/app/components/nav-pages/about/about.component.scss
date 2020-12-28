@@ -1,0 +1,49 @@
+@import "../../../../variables";
+
+.section{
+    margin-bottom: 5em;
+    h1{
+        font-size: $hero-heading;
+        margin-bottom: .5em;
+    }
+    p{
+        font-size: $para;
+        line-height: 145%;
+    }
+}
+
+.story{
+    background-color: rgba($color: $primary-color, $alpha: 0.1);
+    padding: 2em 0;
+    margin-bottom: 5em;
+    .section{
+        margin-bottom: 1em;
+    }
+}
+
+.team{
+    margin-bottom: 5em;
+    h1{
+        font-size: $hero-heading;
+        margin: .5em 0;
+    }
+    &-members{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &-member{
+        text-align: center;
+        margin-bottom: 5em;
+        &-name{
+            font-weight: 600;
+            font-size: $subheading;
+            margin: .5em 0;
+        }
+        &-role{
+            font-weight: 400;
+            font-size: $para;
+        }
+    }
+}

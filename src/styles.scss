@@ -1,0 +1,83 @@
+@import "variables";
+/* You can add global styles to this file, and also import other style files */
+// resets
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *::before,*::after {
+    box-sizing: inherit;
+    font-family: 'Montserrat', sans-serif;;
+}
+body{
+    margin: 0;
+    color: $black-color;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+
+
+//reusable classes
+
+.container{
+    width: 97%;
+    max-width: 1222px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-primary{
+    text-decoration: none;
+    color: white;
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+    font-weight: normal;
+    font-size: $link-button;
+    padding: .82em 2.73em;
+    transition: box-shadow 500ms;
+    &:hover{
+        box-shadow: 0px 0px 5px $primary-color;
+    }
+}
+
+.cta-secondary{
+    text-decoration: none;
+    color: $black-color;
+    border: 2px solid $primary-color;
+    font-weight: normal;
+    font-size: $link-button;
+    padding: .82em 2.73em;
+    transition: background-color 500ms;
+    &:hover{
+        background-color: $primary-color;
+        color: white;
+    }
+}
+
+@media (max-width: 1100px) {
+    :root{
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+    :root{
+        font-size: 12px;
+    }
+}
+@media (max-width: 480px) {
+    :root{
+        font-size: 10px;
+    }
+}

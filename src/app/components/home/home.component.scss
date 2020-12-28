@@ -1,0 +1,109 @@
+@import "../../../variables","../../../hero";
+
+.services{
+    h2{
+        margin-top: 1.2em;
+        font-size: $hero-heading;
+    }
+    .service{
+        margin-top: 2em;
+        margin-bottom: 10em;
+        &-info{
+            width: 40%;
+            &-heading{
+                font-size: $subheading;
+                margin-bottom: 1em;
+            }
+            &-para{
+                font-size: $para;
+                line-height: 145%;
+                margin-bottom: 3em;
+            }
+        }
+        &-image{
+            width: 40%;
+        }
+    }
+
+}
+
+.products{
+    background-color: rgba($color: $primary-color, $alpha: 0.1);
+    padding: .5em 0;
+}
+.projects{
+    padding: .5em 0;
+}
+
+.download{
+    text-align: center;
+    h2{
+        font-size: $subheading;
+    }
+    .red{
+        color: $primary-color;
+        margin-top: .5em;
+        margin-bottom: 1.5em;
+    }
+}
+
+.testimonials{
+    margin-top: 10em;
+    .right-align{
+        margin-left: auto;
+    }
+    .testimonial{
+        margin-bottom: 10em;
+        width: 50%;
+        min-width: 330px;
+        &-quote{
+            display: flex;
+            margin-bottom: 2em;
+            img{
+                position: relative;
+                top: -70px;
+                margin-right: 2em;
+                width: 100px;
+            }
+            &-text{
+                font-size: $link-button;
+            }
+        }
+        &-giver{
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 2em;
+            }
+            &-info{
+                
+                &-name{
+                    font-size: $para;
+                    font-weight: 600;
+                }
+                &-position{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 920px){
+    .services{
+        .flex-reverse{
+            flex-direction: column-reverse;
+        }
+        .service{
+            margin-top: 2em;
+            &-info{
+                width: 100%;
+            }
+            &-image{
+                margin: 3em 0;
+                width: 60%;
+            }
+        }
+    }
+}
+

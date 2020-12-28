@@ -1,0 +1,34 @@
+.features{
+    &-heading{
+        font-size: $hero-heading;
+        margin: 1.5em 0;
+    }
+
+    .feature{
+        width: 50%;
+        min-width: 300px;
+        margin: 8em 0;
+
+        &-right{
+            margin-left: auto;
+        }
+
+        &-heading{
+            font-size: $subheading;
+            margin-bottom: 1em;
+        }
+
+        &-point{
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+            img{
+                margin-right: 1em;
+            }
+            &-content{
+                font-size: $para;
+                line-height: 145%;
+            }
+        }
+    }
+}

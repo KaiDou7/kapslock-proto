@@ -1,0 +1,35 @@
+@import "../../../../variables","../../../../hero";
+
+.topics{
+    .topics-heading{
+        font-size: $hero-heading;
+        margin: 1em 0;
+    }
+    .topic{
+
+        &-name{
+            font-size: $subheading;
+        }
+        .subtopics{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 8em;
+
+            .subtopic{
+                max-width: 200px;
+                margin: 0 3em;
+                margin-top: 5em;
+                &-image{
+                    width: 100%;
+                }
+                &-name{
+                    font-size: $link-button;
+                    text-align: center;
+                    margin: 1em 0;
+                }
+            }
+        }
+    }
+}
