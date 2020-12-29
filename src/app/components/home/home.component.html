@@ -7,11 +7,20 @@
         <p>We are your pathway to a strong online presence. With our solutions you stand out from your peers. We take up full-fledged projects as well as a part of a massive project.</p>
         <div class="ctas flex">
             <a routerLink="/contact" class="cta-primary hero-cta-primary">Get in Touch</a>
-            <a routerLink="/" class="cta-secondary">Download Portfolio</a>
+            <a routerLink="/" class="cta-secondary download-hero-js">Download Portfolio</a>
         </div>
     </div>
     <div class="hero-right">
         <img src="../../../assets/digital-support-services.svg" alt="a person helping another person digitally">
+    </div>
+</div>
+
+<!-- proud members of -->
+<div class="proud container">
+    <h3 class="proud-header">Proud Members of</h3>
+    <div class="proud-images">
+        <img src="../../../assets/partners/BNI.svg" alt="Business Network International Logo">
+        <img src="../../../assets/partners/GTA.svg" alt="Goa Technology Association Logo">
     </div>
 </div>
 
@@ -135,7 +144,7 @@
 <div class="download">
     <h2>To See More of our Client Work</h2>
     <h2 class="red">Download Our Portfolio</h2>
-    <a routerLink="/" class="cta-primary">Download Portfolio</a>
+    <a routerLink="/" class="cta-primary download-js">Download Portfolio</a>
 </div>
 
 <!-- testimonials -->
@@ -182,3 +191,20 @@
 </div>
 
 <app-footer></app-footer>
+
+<!-- download portfolio pop up -->
+<div class="pop">
+    <div class="pop-close">
+        <img src="../../../assets/nav/close.svg" alt="close pop up">
+    </div>
+    <h2 class="pop-header">See More of Our Client Work</h2>
+    <form class="pop-form" action="">
+        <label for="name">Name:</label> <br/>
+        <input class="input" type="text" name="name" id="name"> <br/>
+        <label for="email">Email:</label> <br/>
+        <input class="input" type="email" name="email" id="email"> <br/>
+        <input type="submit" class="form-cta cta-primary" value="Download Portfolio"> <br/>
+    </form>
+</div>
+
+<div class="popup-background-black"></div>
