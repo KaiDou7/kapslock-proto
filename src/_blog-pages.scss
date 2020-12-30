@@ -1,0 +1,36 @@
+//css of blog pages (blog-template-css)
+
+.blog-container{
+    width: 100%;
+    max-width: 1000px;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.blog-template{
+    background-image: url(assets/blog/blog-background.png);
+    background-size: cover;
+
+    &-heading{
+        font-size: 3.75rem;
+    }
+    &-date{
+        font-size: $para;
+        color: rgba($color: $black-color, $alpha: 0.5);
+        margin: 1em 0;
+    }
+    &-content{
+        font-size: $para;
+        line-height: 150%;
+    }
+    &-image{
+        width: 100%;
+        margin: 3em 0;
+    }
+}
+
+@media(max-width: 1100px){
+    .blog-template{
+        background-image: none;
+    }
+}
