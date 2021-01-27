@@ -155,7 +155,7 @@
             <p class="testimonial-quote-text">I absolutely appreciate the work done by the Kapslock team in getting our website up and running within a short duration of time. I am very happy with the service offered by them and offer my whole hearted support and best wishes to the entire team for their future endeavors.</p>
         </div>
         <div class="testimonial-giver">
-            <img src="../../../assets/testimonials/motilal.png" alt="image of motilal">
+            <!-- <img src="../../../assets/testimonials/motilal.png" alt="image of motilal"> -->
             <div class="testimonial-giver-info">
                 <p class="testimonial-giver-info-name">Motilal Vernekar</p>
                 <p class="testimonial-giver-info-position">President, The Old Market Traders and Residents Trust</p>
@@ -168,7 +168,7 @@
             <p class="testimonial-quote-text">We use the Salezify Point Of Sales software developed by Kapslock for our restaurants day to day activities like billing, inventory management etc. It is an excellent product at a very affordable price. I am delighted with Kapslock’s customer care and support.</p>
         </div>
         <div class="testimonial-giver">
-            <img src="../../../assets/testimonials/pratik.jpg" alt="image of pratik">
+            <!-- <img src="../../../assets/testimonials/pratik.jpg" alt="image of pratik"> -->
             <div class="testimonial-giver-info">
                 <p class="testimonial-giver-info-name">Pratik Pednekar</p>
                 <p class="testimonial-giver-info-position">Owner, Matashree Restaurant</p>
@@ -181,7 +181,7 @@
             <p class="testimonial-quote-text">Thank you so much to kapslock.in for making our website absolutely amazing ! & also thank you for showing us the way to our dream life . You guys just rocked it.</p>
         </div>
         <div class="testimonial-giver">
-            <img src="../../../assets/testimonials/gautam.png" alt="image of gautam">
+            <!-- <img src="../../../assets/testimonials/gautam.png" alt="image of gautam"> -->
             <div class="testimonial-giver-info">
                 <p class="testimonial-giver-info-name">Gautam Parab</p>
                 <p class="testimonial-giver-info-position">Co-founder, Pressbell</p>
@@ -198,12 +198,15 @@
         <img src="../../../assets/nav/close.svg" alt="close pop up">
     </div>
     <h2 class="pop-header">See More of Our Client Work</h2>
-    <form class="pop-form" action="">
+    <form class="pop-form" #popUpForm="ngForm" (ngSubmit)="download(popUpForm);">
         <label for="name">Name:</label> <br/>
-        <input class="input" type="text" name="name" id="name"> <br/>
+        <input class="input" type="text" name="name" id="name" required ngModel #name="ngModel"> <br/>
+        <span *ngIf="name.touched && !name.valid">*Please Enter Your Name</span> <br/>
         <label for="email">Email:</label> <br/>
-        <input class="input" type="email" name="email" id="email"> <br/>
-        <input type="submit" class="form-cta cta-primary" value="Download Portfolio"> <br/>
+        <input class="input" type="email" name="email" id="email" required email ngModel #email="ngModel"> <br/>
+        <span *ngIf="email.touched && !email.valid">*Please Enter A Valid Email</span> <br/>
+        <a href="../../../assets/kapslock-portfolio.pdf" class="download-link" style="display: none;" download="">Download</a>
+        <input type="submit" class="form-cta cta-primary" value="Download Portfolio" [disabled]="!popUpForm.valid"> <br/>
     </form>
 </div>
 

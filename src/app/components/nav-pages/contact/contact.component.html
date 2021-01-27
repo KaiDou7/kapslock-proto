@@ -5,24 +5,40 @@
 
     <div class="contact-forms">
         <div class="form contact-email">
-            <form action="">
+            <form #emailContact="ngForm" (ngSubmit)="emailContactCreate(emailContact);">
                 <label for="name">Name:</label> <br/>
-                <input class="input" type="text" name="name" id="name"> <br/>
+                <input class="input" type="text" name="name" id="name" required ngModel #name="ngModel"> <br/>
+                <span *ngIf="name.touched && !name.valid">*Please Enter Your Name</span> <br/>
                 <label for="email">Email:</label> <br/>
-                <input class="input" type="email" name="email" id="email"> <br/>
-                <label for="messsage">Messsage:</label> <br/>
-                <textarea name="message" id="" cols="30" rows="10"></textarea> <br/>
-                <input type="submit" class="form-cta cta-primary" value="Send"> <br/>
+                <input class="input" type="email" name="email" id="email" required email ngModel #email="ngModel"> <br/>
+                <span *ngIf="email.touched && !email.valid">*Please Enter A Valid Email</span> <br/>
+                <label for="message">Messsage:</label> <br/>
+                <textarea name="message" id="message" cols="30" rows="10" required ngModel #message="ngModel"></textarea> <br/>
+                <span *ngIf="message.touched && !message.valid">*Please Enter A Message</span> <br/>
+                <input type="submit" class="send form-cta cta-primary" value="Send" [disabled]="!emailContact.valid"> <br/>
             </form>
         </div>
         <div class="form contact-number">
-            <form action="">
+            <form #phoneContact="ngForm" (ngSubmit)="phoneContact(phoneContact);">
                 <label for="number">Phone Number:</label> <br/>
-                <input class="input" type="tel" name="number" id="number"> <br/>
-                <input type="submit" class="form-cta cta-primary" value="Get a Callback"> <br/>
+                <input class="input" type="tel" name="number" id="number" required ngModel #number="ngModel"> <br/>
+                <span *ngIf="number.touched && !number.valid">*Please Enter A Valid Phone Number</span> <br/>
+                <input type="submit" class="touch form-cta cta-primary" value="Get a Callback" [disabled]="!phoneContact.valid"> <br/>
             </form>
         </div>
     </div>
 </div>
 
+
 <app-footer></app-footer>
+
+<!-- form submission popup -->
+<div class="pop">
+    <div class="pop-close">
+        <img src="../../../assets/nav/close.svg" alt="close pop up">
+    </div>
+    <h2 class="pop-header">Thanks For Getting in Touch🎉</h2>
+    <p class="pop-para">We'll Get Back To You As Soon As Possible</p>
+</div>
+
+<div class="popup-background-black"></div>

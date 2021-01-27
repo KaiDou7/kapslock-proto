@@ -35,5 +35,60 @@
             margin: 0 3em;
             margin-top: 4em;
         }
+        span{
+            color: $primary-color;
+            display: inline-block;
+            padding: .6em 0;
+        }
+        input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid{
+            border-color: $primary-color;
+        }
     }
+}
+
+.pop{
+    display: none;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 104;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    box-shadow: 0 0px 100px rgba(0, 0, 0, 0.84);
+    width: 80%;
+    max-width: 600px;
+
+    &-close{
+        display: inline;
+        cursor: pointer;
+        img{
+            display: block;
+            margin-left: auto;
+            margin-bottom: .5em;
+        }
+    }
+    &-header{
+        font-size: $subheading;
+        text-align: center;
+    }
+    &-para{
+        font-size: $link-button;
+        text-align: center;
+        margin: 2em;
+        color: $primary-color;
+    }
+}
+
+
+
+.popup-background-black{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 103;
+    background-color: rgba($color: #000000, $alpha: 0.5);
 }
