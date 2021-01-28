@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import{ ContactEmailService } from '../../../services/contact-email.service';
+import{ ContactPhoneService } from '../../../services/contact-phone.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,7 @@ import{ ContactEmailService } from '../../../services/contact-email.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private contactEmailService: ContactEmailService) { }
+  constructor(private contactEmailService: ContactEmailService, private contactPhoneService: ContactPhoneService) { }
 
   ngOnInit(): void {
     const pop = document.querySelector<HTMLElement>(".pop");
@@ -47,7 +48,15 @@ export class ContactComponent implements OnInit {
     });
     emailContact.resetForm();
   }
-  phoneContact(phoneContact: NgForm){
+  phoneContactCreate(phoneContact: NgForm){
+    console.log("Yo");
     console.log(phoneContact);
+    console.log("Bro");
+    const newFormData = { name:phoneContact.value.namePhone, phone: phoneContact.value.number };
+    console.log(newFormData);
+    this.contactPhoneService.createPhoneContact(newFormData).subscribe( data => {
+      console.log(data);
+    });
+    phoneContact.resetForm();
   }
 }

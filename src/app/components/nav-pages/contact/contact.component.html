@@ -19,7 +19,10 @@
             </form>
         </div>
         <div class="form contact-number">
-            <form #phoneContact="ngForm" (ngSubmit)="phoneContact(phoneContact);">
+            <form #phoneContact="ngForm" (ngSubmit)="phoneContactCreate(phoneContact);">
+                <label for="name">Name:</label> <br/>
+                <input class="input" type="text" name="namePhone" id="name" required ngModel #namePhone="ngModel"> <br/>
+                <span *ngIf="namePhone.touched && !namePhone.valid">*Please Enter Your Name</span> <br/>
                 <label for="number">Phone Number:</label> <br/>
                 <input class="input" type="tel" name="number" id="number" required ngModel #number="ngModel"> <br/>
                 <span *ngIf="number.touched && !number.valid">*Please Enter A Valid Phone Number</span> <br/>
